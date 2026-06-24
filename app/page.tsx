@@ -4,51 +4,94 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
 const categories = [
-  { id: 'paper', name: 'المطبوعات الورقية', icon: '📄', desc: 'كروت، منيو، فواتير، بروشورات', color: 'bg-blue-50' },
-  { id: 'trophies', name: 'الجوائز والتكريمات', icon: '🏆', desc: 'دروع كريستال، خشب، قطيفة', color: 'bg-yellow-50' },
-  { id: 'laser', name: 'الحفر بالليزر', icon: '⚡', desc: 'ميداليات، بوكسات، هدايا ليزر', color: 'bg-red-50' },
-  { id: 'thermal', name: 'الطباعة الحرارية', icon: '👕', desc: 'تيشرتات، مجات، أعلام، قماش', color: 'bg-green-50' },
-  { id: 'signage', name: 'اللوحات واليفط', icon: '🏢', desc: 'نيون، مضيئة، حروف بارزة', color: 'bg-purple-50' },
+  { id: 'paper', name: 'المطبوعات الورقية', icon: '📄', desc: 'كروت، منيو، فواتير، بروشورات', color: 'from-blue-600 to-blue-400' },
+  { id: 'trophies', name: 'الجوائز والتكريمات', icon: '🏆', desc: 'دروع كريستال، خشب، قطيفة', color: 'from-yellow-600 to-yellow-400' },
+  { id: 'laser', name: 'الحفر بالليزر', icon: '⚡', desc: 'ميداليات، بوكسات، هدايا ليزر', color: 'from-red-600 to-red-400' },
+  { id: 'thermal', name: 'الطباعة الحرارية', icon: '👕', desc: 'تيشرتات، مجات، أعلام، قماش', color: 'from-green-600 to-green-400' },
+  { id: 'signage', name: 'اللوحات واليفط', icon: '🏢', desc: 'نيون، مضيئة، حروف بارزة', color: 'from-purple-600 to-purple-400' },
 ];
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-yellow-200">
+    <div className="min-h-screen bg-[#fafafa] font-sans selection:bg-yellow-200 overflow-x-hidden">
       <Header />
+      
       <main>
-        <section className="relative py-20 px-6 text-center overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-yellow-50 opacity-30 -z-10 rounded-full blur-3xl scale-150 translate-y-[-50%]"></div>
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-black text-black mb-6 leading-tight">
-              مطبعه <span className="text-yellow-600">القائد</span> <br />
-              <span className="text-2xl md:text-4xl text-gray-600 font-bold">للدعاية والاعلان والحلول الرقميه</span>
-            </h1>
-            <p className="text-gray-500 text-lg mb-10 max-w-2xl mx-auto">
-              نحن ندمج دقة الطباعة بذكاء الحلول الرقمية لنصنع حضوراً لا يُنسى لعملائنا.
-            </p>
-            <div className="flex justify-center gap-4">
-              <button className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-yellow-600 transition-all shadow-lg">اطلب الآن</button>
-              <button className="bg-white text-black border-2 border-black px-8 py-3 rounded-full font-bold hover:bg-black hover:text-white transition-all">أعمالنا</button>
+        {/* LUXURY HERO SECTION */}
+        <section className="relative py-32 px-6 overflow-hidden bg-white">
+          {/* Abstract Background Elements */}
+          <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-yellow-100 rounded-full blur-[120px] opacity-60 -z-10"></div>
+          <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-gray-100 rounded-full blur-[100px] opacity-80 -z-10"></div>
+          
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-3/5 text-right space-y-8">
+              <div className="inline-flex items-center gap-2 bg-black text-yellow-500 px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase shadow-lg">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
+                </span>
+                The Gold Standard of Printing
+              </div>
+              
+              <h1 className="text-6xl md:text-8xl font-black text-black leading-[1.1] tracking-tighter">
+                مطبعه <span className="text-yellow-600 relative inline-block">القائد <span className="absolute bottom-2 left-0 w-full h-3 bg-yellow-200 -z-10 opacity-60 rounded-full"></span></span> <br />
+                <span className="text-3xl md:text-5xl text-gray-600 font-//bold block mt-4">للدعاية والاعلان والحلول الرقميه</span>
+              </h1>
+              
+              <p className="text-xl text-gray-500 max-w-2xl leading-relaxed font-medium">
+                نحن لا نطبع الورق فحسب، بل نصنع <span className="text-black font-bold">هوية بصرية</span> تخطف الأنظار ونبني <span className="text-black font-bold">حلولاً رقمية</span> تضعك في المقدمة. دقة في التنفيذ، فخامة في التصميم.
+              </p>
+              
+              <div className="flex flex-wrap gap-6 justify-start">
+                <button className="bg-black text-white px-12 py-5 rounded-full font-black text-lg hover:bg-yellow-600 transition-all duration-300 shadow-2xl hover:shadow-yellow-200 active:scale-95 group flex items-center gap-3">
+                  ابدأ مشروعك الآن 
+                  <span className="group-hover:translate-x-[-5px] transition-transform">←</span>
+                </button>
+                <button className="bg-white text-black border-2 border-black px-12 py-5 rounded-full font-black text-lg hover:bg-black hover:text-white transition-all duration-300 active:scale-95">
+                  استكشف أعمالنا
+                </button>
+              </div>
+            </div>
+            
+            <div className="lg:w-2/5 relative group">
+              <div className="relative z-10 w-full aspect-square bg-black rounded-[60px] rotate-3 group-hover:rotate-0 transition-all duration-700 shadow-2xl flex items-center justify-center overflow-hidden border-8 border-white">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/40 via-transparent to-transparent"></div>
+                <div className="text-center relative z-10">
+                   <span className="text-white text-9xl font-black opacity-20 block">ALQAID</span>
+                   <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-yellow-500 text-5xl font-black italic">Premium Quality</span>
+                   </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-yellow-400 rounded-full blur-[100px] opacity-30 -z-10"></div>
             </div>
           </div>
         </section>
 
-        <section className="py-20 px-6 bg-gray-50">
+        {/* AMAZON-STYLE PREMIUM GRID */}
+        <section className="py-32 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-black text-black mb-4">أقسامنا المتخصصة</h2>
-              <div className="w-20 h-1.5 bg-yellow-600 mx-auto rounded-full"></div>
+            <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+              <div className="text-right">
+                <h3 className="text-4xl font-black text-black mb-4 tracking-tight">أقسامنا المتخصصة</h3>
+                <div className="w-24 h-2 bg-yellow-600 rounded-full"></div>
+              </div>
+              <Link href="/services" className="text-sm font-black text-gray-400 hover:text-black transition-all flex items-center gap-2 group">
+                تصفح جميع الخدمات <span className="text-yellow-600 group-hover:translate-x-[-5px] transition-transform">←</span>
+              </Link>
             </div>
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
               {categories.map((cat) => (
-                <div key={cat.id} className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all cursor-pointer group">
-                  <div className={`w-16 h-16 ${cat.color} rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform`}>
+                <div key={cat.id} className="group bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 cursor-pointer relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${cat.color} rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500 text-white`}>
                     {cat.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-3 group-hover:text-yellow-600 transition-colors">{cat.name}</h3>
-                  <p className="text-gray-400 text-sm mb-6 h-12">{cat.desc}</p>
-                  <div className="text-black font-bold text-xs flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
-                    تصفح المنتجات <span className="text-yellow-600">←</span>
+                  <h4 className="text-xl font-black text-black mb-3 group-hover:text-yellow-600 transition-colors">{cat.name}</h4>
+                  <p className="text-gray-400 text-sm mb-8 leading-relaxed h-12">{cat.desc}</p>
+                  <div className="text-black font-black text-xs flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all translate-x-4 group-hover:translate-x-0">
+                    استكشف الآن <span className="text-yellow-600">←</span>
                   </div>
                 </div>
               ))}
@@ -56,29 +99,65 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="py-24 px-6 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-16">
-            <div className="lg:w-1/2 text-right">
-              <div className="inline-block bg-black text-yellow-500 px-4 py-1 rounded-full text-xs font-black mb-6">05 DIGITAL SOLUTIONS</div>
-              <h3 className="text-4xl md:text-6xl font-black text-black mb-8 leading-tight">
-                حلول <span className="text-yellow-600">05</span> الرقميه <br /> 
-                <span className="text-2xl md:text-3xl text-gray-500 font-medium">مستقبل أعمالك يبدأ بذكاء</span>
-              </h3>
-              <p className="text-gray-500 text-lg mb-10 leading-relaxed">
-                تطوير المواقع، تطبيقات الموبايل، وأنظمة الذكاء الاصطناعي. نحن نبني لك "العقل الرقمي" الذي يدير مشروعك بكفاءة.
-              </p>
-              <button className="bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-yellow-600 transition-all shadow-xl">اكتشف قوة 05</button>
-            </div>
-            <div className="lg:w-1/2 relative">
-              <div className="w-full aspect-square bg-black rounded-[40px] shadow-2xl rotate-3 flex items-center justify-center overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/30 to-transparent"></div>
-                <span className="text-white text-8xl font-black opacity-20 group-hover:opacity-40 transition-opacity">05 AI</span>
+        {/* THE "05" DIGITAL HUB - DARK MODE CONTRAST */}
+        <section className="py-32 px-6 bg-black text-white overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-20 relative z-10">
+            <div className="lg:w-1/2 text-right space-y-8">
+              <div className="inline-flex items-center gap-2 bg-yellow-500 text-black px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-[0_0_20px_rgba(234,179,8,0.4)]">
+                Innovation Hub
               </div>
+              <h3 className="text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter">
+                حلول <span className="text-yellow-500 relative">05</span> الرقميه <br /> 
+                <span className="text-2xl md:text-4xl text-gray-400 font-medium block mt-4">نصمم المستقبل بذكاء اصطناعي</span>
+              </h3>
+              <p className="text-gray-400 text-lg leading-relaxed font-medium max-w-xl">
+                نقلنا خبرة "القائد" من الورق إلى السحاب. نبني لك أنظمة ذكية، تطبيقات موبايل، ومواقع إلكترونية تحول عملك من التقليد إلى الريادة الرقمية.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+                {[
+                  'تطوير مواقع الويب الفاخرة',
+                  'تطبيقات موبايل (iOS & Android)',
+                  'أتمتة الشركات بالـ AI',
+                  'استراتيجيات التسويق الرقمي'
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3 p-5 bg-white/5 rounded-2xl border border-white/10 hover:border-yellow-500/50 transition-all group backdrop-blur-sm">
+                    <span className="text-yellow-500 font-bold group-hover:scale-125 transition-transform">✦</span>
+                    <span className="text-white font-bold text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <button className="bg-yellow-500 text-black px-12 py-5 rounded-full font-black text-lg hover:bg-white transition-all shadow-2xl active:scale-95">
+                انضم إلى عصر 05 الرقمي
+              </button>
+            </div>
+            <div className="lg:w-1/2 relative group">
+              <div className="w-full aspect-square bg-gradient-to-br from-gray-900 to-black rounded-[60px] border border-white/10 shadow-3xl rotate-3 group-hover:rotate-0 transition-all duration-700 flex items-center justify-center overflow-hidden relative">
+                <div className="absolute inset-0 bg-yellow-500/10 animate-pulse"></div>
+                <div className="text-center relative z-10">
+                  <span className="text-white text-9xl font-black opacity-10 block mb-2">05</span>
+                  <h4 className="text-3xl font-black text-yellow-500 tracking-tighter italic">THE AI ENGINE</h4>
+                </div>
+              </div>
+              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-yellow-600 rounded-full blur-[120px] opacity-20 -z-10"></div>
             </div>
           </div>
         </section>
       </main>
       <Footer />
+      
+      {/* FLOATING CONTACTS */}
+      <div className="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
+        <div className="flex flex-col items-end gap-2 group">
+           <span className="bg-white text-black text-[10px] font-black px-3 py-1 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">أحمد عبدين</span>
+           <a href="https://wa.me/201279431358" target="_blank" className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all text-2xl group">💬</a>
+        </div>
+        <div className="flex flex-col items-end gap-2 group">
+           <span className="bg-white text-black text-[10px] font-black px-3 py-1 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">صلاح سامح</span>
+           <a href="https://wa.me/201229102164" target="_blank" className="w-14 h-14 bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all text-2xl group">💬</a>
+        </div>
+        <a href="https://www.facebook.com/profile.php?id=61587534513034" target="_blank" className="w-14 h-14 bg-[#1877F2] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all text-2xl group">f</a>
+      </div>
     </div>
   );
 }
