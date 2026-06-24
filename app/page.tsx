@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
+// Forced Update for Vercel Build - Version 1.0.1
+
 const categories = [
   { id: 'paper', name: 'المطبوعات الورقية', icon: '📄', desc: 'كروت، منيو، فواتير، بروشورات', color: 'from-blue-500 to-blue-600' },
   { id: 'trophies', name: 'الجوائز والتكريمات', icon: '🏆', desc: 'دروع كريستال، خشب، قطيفة', color: 'from-yellow-500 to-yellow-600' },
