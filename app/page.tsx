@@ -3,8 +3,6 @@ import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
-// Forced Update for Vercel Build - Version 1.0.1
-
 const categories = [
   { id: 'paper', name: 'المطبوعات الورقية', icon: '📄', desc: 'كروت، منيو، فواتير، بروشورات', color: 'from-blue-500 to-blue-600' },
   { id: 'trophies', name: 'الجوائز والتكريمات', icon: '🏆', desc: 'دروع كريستال، خشب، قطيفة', color: 'from-yellow-500 to-yellow-600' },
@@ -16,6 +14,11 @@ const categories = [
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-yellow-200">
+      {/* Verification Bar - This MUST appear if Vercel is updating */}
+      <div className="bg-red-600 text-white text-center py-3 font-black text-xl animate-pulse z-50 relative">
+        النسخة الأسطورية وصلت يا فنان - 2026 🚀🤖
+      </div>
+
       <Header />
       
       <main>
@@ -53,7 +56,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Amazon-Style Categories (The Grid) */}
+        {/* Amazon-Style Categories */}
         <section className="py-24 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-end justify-between mb-12">
@@ -83,7 +86,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* High-Tech Solutions 05 Section */}
+        {/* Solutions 05 Section */}
         <section className="py-24 px-4 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-16">
             <div className="lg:w-1/2 text-right">
@@ -120,7 +123,7 @@ export default function HomePage() {
             </div>
             <div className="lg:w-1/2 relative group">
               <div className="w-full aspect-square bg-black rounded-[40px] overflow-hidden relative shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-700">
-                <div className="absolute inset-0 bg-gradient-to-tr from-yellow-600/40 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/40 via-transparent to-transparent"></div>
                 <div className="absolute inset-0 flex items-center justify-center text-center p-12">
                   <div className="text-white">
                     <span className="text-7xl md:text-9xl font-black block mb-4 opacity-10">05</span>
@@ -136,7 +139,7 @@ export default function HomePage() {
       
       <Footer />
       
-      {/* Floating Action Buttons (Fast Access) */}
+      {/* Floating Action Buttons */}
       <div className="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
         <div className="flex flex-col items-end gap-3">
            <div className="bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full shadow-md mb-1 opacity-0 group-hover:opacity-100 transition-opacity">أحمد عبدين</div>
