@@ -2,55 +2,77 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
-export default function HomePage() {
-  const categories = [
-    { id: 'paper', name: 'المطبوعات الورقية', icon: '📄', color: 'bg-blue-50' },
-    { id: 'trophies', name: 'الجوائز والتكريمات', icon: '🏆', color: 'bg-yellow-50' },
-    { id: 'laser', name: 'الحفر بالليزر', icon: '⚡', color: 'bg-red-50' },
-    { id: 'thermal', name: 'الطباعة الحرارية', icon: '👕', color: 'bg-green-50' },
-    { id: 'signage', name: 'اللوحات واليفط', icon: '🏢', color: 'bg-purple-50' },
-  ];
+const categories = [
+  { id: 'paper', name: 'المطبوعات الورقية', icon: '📄', desc: 'كروت، منيو، فواتير، بروشورات', color: 'from-blue-500 to-blue-600' },
+  { id: 'trophies', name: 'الجوائز والتكريمات', icon: '🏆', desc: 'دروع كريستال، خشب، قطيفة', color: 'from-yellow-500 to-yellow-600' },
+  { id: 'laser', name: 'الحفر بالليزر', icon: '⚡', desc: 'ميداليات، بوكسات، هدايا ليزر', color: 'from-red-500 to-red-600' },
+  { id: 'thermal', name: 'الطباعة الحرارية', icon: '👕', desc: 'تيشرتات، مجات، أعلام، قماش', color: 'from-green-500 to-green-600' },
+  { id: 'signage', name: 'اللوحات واليفط', icon: '🏢', desc: 'نيون، مضيئة، حروف بارزة', color: 'from-purple-500 to-purple-600' },
+];
 
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-sans selection:bg-yellow-200">
       <Header />
       
       <main>
-        {/* Hero Section */}
-        <section className="relative py-24 px-4 overflow-hidden bg-white text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-7xl font-extrabold text-black mb-6 leading-tight">
-              مطبعه القائد <br />
-              <span className="text-yellow-600">للدعاية والاعلان والحلول الرقميه</span>
-            </h2>
-            <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-              نجمع بين دقة الطباعة وابتكار الحلول الرقمية لنمنح علامتك التجارية حضوراً لا يُنسى. من الكروت الشخصية وحتى بناء الأنظمة الذكية.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-yellow-600 transition-all hover:text-black text-lg">
-                اطلب خدمتك الآن
-              </button>
-              <button className="border-2 border-black text-black px-8 py-4 rounded-full font-bold hover:bg-black hover:text-white transition-all text-lg">
-                تصفح أعمالنا
-              </button>
+        {/* High-End Hero Section */}
+        <section className="relative py-24 px-4 overflow-hidden bg-white">
+          <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-yellow-50 opacity-50 rounded-bl-[100px]"></div>
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <div className="lg:w-3/5 text-right">
+              <div className="inline-block bg-black text-yellow-500 px-4 py-1 rounded-full text-xs font-black mb-6 tracking-widest uppercase">
+                Premium Printing & Tech
+              </div>
+              <h2 className="text-5xl md:text-7xl font-black text-black mb-8 leading-[1.1] tracking-tighter">
+                مطبعه <span className="text-yellow-600 relative">القائد <span className="absolute bottom-2 left-0 w-full h-2 bg-yellow-200 -z-10 opacity-60"></span></span> <br />
+                <span className="text-3xl md:text-5xl text-gray-700 font-bold">للدعاية والاعلان والحلول الرقميه</span>
+              </h2>
+              <p className="text-lg text-gray-500 mb-12 max-w-xl leading-relaxed font-medium">
+                نحن لا نطبع الورق فحسب، بل نصنع هويتك البصرية ونبني حضورك الرقمي. دقة في التنفيذ، فخامة في التصميم، وابتكار يتجاوز التوقعات.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-start">
+                <button className="bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-yellow-600 transition-all hover:text-black shadow-xl hover:shadow-yellow-200 active:scale-95 text-lg">
+                  ابدأ مشروعك الآن
+                </button>
+                <button className="bg-white text-black border-2 border-black px-10 py-4 rounded-full font-bold hover:bg-black hover:text-white transition-all text-lg">
+                  استكشف أعمالنا
+                </button>
+              </div>
+            </div>
+            <div className="lg:w-2/5 relative group">
+              <div className="w-full aspect-square bg-black rounded-3xl rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-2xl flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/30 to-transparent"></div>
+                <span className="text-white text-8xl font-black opacity-20 select-none">ALQAID</span>
+              </div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-500 rounded-full blur-3xl opacity-30 -z-10"></div>
             </div>
           </div>
         </section>
 
-        {/* Amazon-style Categories Grid */}
-        <section className="py-20 px-4 bg-gray-50">
+        {/* Amazon-Style Categories (The Grid) */}
+        <section className="py-24 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h3 className="text-3xl font-bold text-black mb-12 text-center">أقسامنا الرئيسية</h3>
+            <div className="flex items-end justify-between mb-12">
+              <div className="text-right">
+                <h3 className="text-3xl font-black text-black mb-2">أقسامنا المتخصصة</h3>
+                <div className="w-20 h-1.5 bg-yellow-600 rounded-full"></div>
+              </div>
+              <Link href="/services" className="text-sm font-bold text-gray-500 hover:text-black transition-colors flex items-center gap-2">
+                عرض كل الخدمات <span className="text-yellow-600">←</span>
+              </Link>
+            </div>
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
               {categories.map((cat) => (
-                <div key={cat.id} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all cursor-pointer group">
-                  <div className={`w-16 h-16 ${cat.color} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
+                <div key={cat.id} className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer group">
+                  <div className={`w-16 h-16 ${cat.color} rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:scale-110 transition-transform`}>
                     {cat.icon}
                   </div>
-                  <h4 className="text-xl font-bold text-black mb-2">{cat.name}</h4>
-                  <p className="text-gray-500 text-sm mb-4">تصفح أفضل المنتجات والخدمات في هذا القسم</p>
-                  <div className="text-yellow-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                    عرض الكل <span>←</span>
+                  <h4 className="text-xl font-black text-black mb-3 group-hover:text-yellow-600 transition-colors">{cat.name}</h4>
+                  <p className="text-gray-400 text-sm mb-6 leading-relaxed h-12">{cat.desc}</p>
+                  <div className="text-black font-bold text-sm flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all translate-x-2 group-hover:translate-x-0">
+                    تصفح المنتجات <span className="text-yellow-600">←</span>
                   </div>
                 </div>
               ))}
@@ -58,43 +80,52 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Solutions 05 Section */}
-        <section className="py-20 px-4 bg-white">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
-              <div className="inline-block bg-yellow-100 text-yellow-700 px-4 py-1 rounded-full text-sm font-bold mb-4">
-                قوة الذكاء الاصطناعي 🤖
+        {/* High-Tech Solutions 05 Section */}
+        <section className="py-24 px-4 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-16">
+            <div className="lg:w-1/2 text-right">
+              <div className="inline-flex items-center gap-2 bg-black text-yellow-500 px-4 py-1 rounded-full text-xs font-black mb-6 uppercase tracking-widest shadow-lg">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
+                </span>
+                Digital Transformation
               </div>
-              <h3 className="text-4xl font-extrabold text-black mb-6 leading-tight">
-                حلول <span className="text-yellow-600">05</span> الرقمية <br /> 
-                مستقبلك التكنولوجي يبدأ هنا
+              <h3 className="text-4xl md:text-6xl font-black text-black mb-8 leading-tight">
+                حلول <span className="text-yellow-600 relative">05</span> الرقمية <br /> 
+                <span className="text-2xl md:text-3xl text-gray-500 font-medium">مستقبل أعمالك يبدأ بذكاء</span>
               </h3>
-              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                لا نقدم مجرد طباعة، بل نصنع لك حضوراً رقمياً ذكياً. متخصصون في بناء التطبيقات، المواقع الإلكترونية، وأتمتة الأعمال باستخدام أحدث تقنيات الذكاء الاصطناعي.
+              <p className="text-gray-500 text-lg mb-10 leading-relaxed font-medium">
+                لا نكتفي بالورق، بل نمنح مشروعك "عقلاً رقمياً". متخصصون في بناء الأنظمة الذكية التي ترفع مبيعاتك وتسهل إدارتك باستخدام أحدث تقنيات الذكاء الاصطناعي.
               </p>
-              <ul className="space-y-4 mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                 {[
-                  'تصميم وتطوير مواقع الويب المتطورة',
-                  'بناء تطبيقات الموبايل (iOS & Android)',
-                  'أنظمة أتمتة الأعمال والذكاء الاصطناعي',
+                  'تصميم وتطوير مواقع الويب',
+                  'بناء تطبيقات الموبايل',
+                  'أتمتة الأعمال بالـ AI',
                   'هوية بصرية رقمية متكاملة'
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-black font-medium">
-                    <span className="text-yellow-500">✓</span> {item}
-                  </li>
+                  <div key={idx} className="flex items-center gap-3 p-4 bg-gray-50 rounded-2xl border border-gray-100 hover:border-yellow-500 transition-all group">
+                    <span className="text-yellow-500 font-bold group-hover:scale-125 transition-transform">✓</span>
+                    <span className="text-black font-bold text-sm">{item}</span>
+                  </div>
                 ))}
-              </ul>
-              <button className="bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-yellow-600 transition-all hover:text-black">
-                اكتشف حلول 05 الرقمية
+              </div>
+              <button className="bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-yellow-600 transition-all hover:text-black shadow-xl active:scale-95 text-lg">
+                اكتشف قوة 05 الرقمية
               </button>
             </div>
-            <div className="lg:w-1/2 relative">
-              <div className="w-full aspect-square bg-gray-100 rounded-3xl overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center text-9xl font-black text-gray-200 opacity-50 select-none">
-                  05 AI
+            <div className="lg:w-1/2 relative group">
+              <div className="w-full aspect-square bg-black rounded-[40px] overflow-hidden relative shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-700">
+                <div className="absolute inset-0 bg-gradient-to-tr from-yellow-600/40 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 flex items-center justify-center text-center p-12">
+                  <div className="text-white">
+                    <span className="text-7xl md:text-9xl font-black block mb-4 opacity-10">05</span>
+                    <h4 className="text-2xl font-bold relative z-10">الذكاء الاصطناعي <br /> في خدمة أعمالك</h4>
+                  </div>
                 </div>
               </div>
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-yellow-400 rounded-full blur-3xl opacity-20 -z-10"></div>
             </div>
           </div>
         </section>
@@ -102,15 +133,21 @@ export default function HomePage() {
       
       <Footer />
       
-      {/* Floating Contact Buttons */}
-      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
-        <a href="https://wa.me/201279431358" target="_blank" className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform text-2xl">
-          💬
-        </a>
-        <a href="https://wa.me/201229102164" target="_blank" className="w-14 h-14 bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform text-2xl">
-          💬
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61587534513034" target="_blank" className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform text-2xl">
+      {/* Floating Action Buttons (Fast Access) */}
+      <div className="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
+        <div className="flex flex-col items-end gap-3">
+           <div className="bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full shadow-md mb-1 opacity-0 group-hover:opacity-100 transition-opacity">أحمد عبدين</div>
+           <a href="https://wa.me/201279431358" target="_blank" className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all text-2xl group relative">
+             💬
+           </a>
+        </div>
+        <div className="flex flex-col items-end gap-3">
+           <div className="bg-white text-black text-[10px] font-bold px-3 py-1 rounded-full shadow-md mb-1 opacity-0 group-hover:opacity-100 transition-opacity">صلاح سامح</div>
+           <a href="https://wa.me/201229102164" target="_blank" className="w-14 h-14 bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all text-2xl group relative">
+             💬
+           </a>
+        </div>
+        <a href="https://www.facebook.com/profile.php?id=61587534513034" target="_blank" className="w-14 h-14 bg-[#1877F2] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all text-2xl group relative">
           f
         </a>
       </div>
