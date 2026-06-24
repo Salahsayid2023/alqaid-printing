@@ -1,11 +1,15 @@
 import React from 'react';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
-      <body>{children}</body>
+      <head>
+        <title>مطبعه القائد | للدعاية والاعلان والحلول الرقميه</title>
+        <meta name="description" content="الرائدة في مجال الدعاية والاعلان والحلول الرقميه" />
+      </head>
+      <body className="bg-white text-black antialiased">
+        {children}
+      </body>
     </html>
   );
 }
